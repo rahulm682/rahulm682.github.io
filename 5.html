@@ -1,0 +1,162 @@
+<html>
+<!-- Rahul Maurya -->
+
+<head>
+    <title>Program 5</title>
+    <style>
+        body {
+            background-color: grey;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .turn {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .game {
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            width: 285px;
+            height: 285px;
+            padding: 5px;
+        }
+
+        .item {
+            display: inline-block;
+            margin: 5px;
+            height: 80px;
+            width: 80px;
+            border: 2px solid blue;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 60px;
+            cursor: pointer;
+        }
+
+        .reset {
+            font-size: 32px;
+            border-radius: 10px;
+            padding: 5px 10px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .prevent-click {
+            pointer-events: none;
+            background-color: aqua;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <script src="../js/jquery.js"></script>
+</head>
+
+<!-- Rahul Maurya -->
+
+<body>
+    <div class="header">
+        <h1>
+            TIC TAC TOE
+        </h1>
+    </div>
+    <hr>
+    <br>
+
+    <div class="turn">
+        Player 1's Turn
+    </div>
+    <br><br>
+
+    <div class="game">
+        <button id="1" class="item"></button>
+        <button id="2" class="item"></button>
+        <button id="3" class="item"></button>
+        <button id="4" class="item"></button>
+        <button id="5" class="item"></button>
+        <button id="6" class="item"></button>
+        <button id="7" class="item"></button>
+        <button id="8" class="item"></button>
+        <button id="9" class="item"></button>
+    </div>
+    <br><br>
+
+    <div class="last header">
+        <button class="reset">Reset</button>
+    </div>
+
+
+    <div class="result header"></div>
+
+
+    <script>
+        // Rahul Maurya
+        var next = 'X';
+        $(function () {
+
+            $(".item").on("click", function () {
+                $(this).html(next);
+                if (next === 'X') {
+                    next = 'O';
+                    $(".turn").html("Player 2's Turn");
+                    $(this).addClass("x");
+                } else {
+                    next = 'X';
+                    $(".turn").html("Player 1's Turn");
+                    $(this).addClass("o");
+                }
+
+                $(this).attr('disabled', 'true');
+
+                var w = checkWinner();
+
+                if (w === 1) {
+                    $(".result").html("Player 1 is winner").css({ 'font-size': "50px" });
+                    $(".item").attr('disabled', 'true');
+                } else if (w === 2) {
+                    $(".result").html("Player 2 is winner").css({ 'font-size': "50px" });
+                    $(".item").attr('disabled', 'true');
+                }
+            });
+
+            function checkWinner() {
+                if (($("#1").hasClass("x") && $("#2").hasClass("x") && $("#3").hasClass("x")) ||
+                    ($("#4").hasClass("x") && $("#5").hasClass("x") && $("#6").hasClass("x")) ||
+                    ($("#7").hasClass("x") && $("#8").hasClass("x") && $("#9").hasClass("x")) ||
+                    ($("#1").hasClass("x") && $("#4").hasClass("x") && $("#7").hasClass("x")) ||
+                    ($("#2").hasClass("x") && $("#5").hasClass("x") && $("#8").hasClass("x")) ||
+                    ($("#3").hasClass("x") && $("#6").hasClass("x") && $("#9").hasClass("x")) ||
+                    ($("#1").hasClass("x") && $("#5").hasClass("x") && $("#9").hasClass("x")) ||
+                    ($("#3").hasClass("x") && $("#5").hasClass("x") && $("#7").hasClass("x"))) return 1;
+
+                if (($("#1").hasClass("o") && $("#2").hasClass("o") && $("#3").hasClass("o")) ||
+                    ($("#4").hasClass("o") && $("#5").hasClass("o") && $("#6").hasClass("o")) ||
+                    ($("#7").hasClass("o") && $("#8").hasClass("o") && $("#9").hasClass("o")) ||
+                    ($("#1").hasClass("o") && $("#4").hasClass("o") && $("#7").hasClass("o")) ||
+                    ($("#2").hasClass("o") && $("#5").hasClass("o") && $("#8").hasClass("o")) ||
+                    ($("#3").hasClass("o") && $("#6").hasClass("o") && $("#9").hasClass("o")) ||
+                    ($("#1").hasClass("o") && $("#5").hasClass("o") && $("#9").hasClass("o")) ||
+                    ($("#3").hasClass("o") && $("#5").hasClass("o") && $("#7").hasClass("o"))) return 2;
+
+                return 0;
+            }
+
+            $(".reset").on("click", function () {
+                $(".item").removeAttr('disabled');
+                $(".item").html("");
+                $(".item").removeClass('x');
+                $(".item").removeClass('o');
+                $(".result").html(" ");
+                $(".turn").html("Player 1's Turn");
+                next = 'X';
+            });
+        });
+        // Rahul Maurya
+    </script>
+</body>
+<html>
