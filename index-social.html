@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>Welcome</title>
+    <script src="../../js/jquery.js"></script>
+    <link rel="stylesheet" href="./index-socia.css" />
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="header">
+            <span class="logo">facebook</span>
+            <span class="username">username</span>
+            <span class="logout">logout</span>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="result">
+        
+    </div>
+
+    <script>
+        $(function () {
+            $(".logout").on("click", function () {
+                $(location).attr("href", "login.html");
+            });
+
+            $(".logout").hover(function () {
+                $(this).css('cursor', 'pointer');
+            });
+
+            var str = " ";
+            $.getJSON("data.json", function (json) {
+                let username = JSON.parse(localStorage.getItem('user')).uname;
+                localStorage.setItem('details', JSON.stringify(json));
+                var json = JSON.parse(localStorage.getItem('details'));
+                json.data.forEach(element => {
+                    console.log(element);
+                    str += `<div class="card">
+                                Name: ${element.name}<br>
+                                Age: ${element.age}<br>
+                                Gender: ${element.gender}<br>
+                                Email: ${element.email}<br>
+                                Contact: ${element.contact}<br>
+                                Username: ${element.uname}<br>
+                            </div>`;
+
+                });
+                $(".username").html(username);
+                $(".result").html(str).css('color', 'white');
+             });
+        });
+    </script>
+</body>
+<html>

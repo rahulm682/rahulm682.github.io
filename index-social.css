@@ -1,0 +1,52 @@
+body {
+    display: block;
+    font-size: 24px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(39, 6, 82);
+    font-family: 'Roboto Slab', serif;
+}
+
+.navbar {
+    background-color: rgb(77, 130, 245);
+    border-radius: 5px;
+    /* width: 100%; */
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    font-size: 28px;
+}
+
+.logo {
+    width: auto;
+    /* border: 1px solid black; */
+    margin: 10px;
+}
+
+.username {
+    width: auto;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+.logout {
+    width: auto;
+    /* border: 1px solid black; */
+    margin: 10px;   
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 2px solid black;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+}

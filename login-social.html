@@ -1,0 +1,107 @@
+<html>
+<!-- Rahul Maurya -->
+<head>
+    <title>Welcome to login Page</title>
+</head>
+<script src="../../js/jquery.js"></script>
+<link rel="stylesheet" href="./login.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet" />
+
+<body>
+    <div class="navbar">
+        <div class="header">
+            <label class="title"><strong>Facebook</strong></label>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="container">
+            <h2 class="welcome-text-heading"><strong>facebook</strong></h2>
+            <div class="welcome-text-content1">
+                Don't have account, Sign Up today for free
+            </div>
+
+            <div class="welcome-text-content2">
+                Facebook helps you connect and share with the people in your life.
+            </div>
+        </div>
+
+        <div class="sign-in-form">
+            <div id="result"></div>
+            <form action="" id="sign-in">
+                <input class="input-field" type="text" id="uname" placeholder="Email address or Phone number" />
+                <br /><br />
+                <input class="input-field" type="password" id="password" placeholder="Password" />
+                <br /><br />
+                <input id="login" type="button" value="Log In" class="login-button" />
+                <br /><br />
+                <span class="forgot-password"><a href="">Forgotten password?</a></span>
+                <hr />
+                <br />
+                <input type="button" value="Create New Account" class="sign-up-button" />
+            </form>
+        </div>
+    </div>
+    <br>
+    <hr />
+
+    <noscript> document.write("This code is written in JQuery"); </noscript>
+
+    <script>
+        $().ready(function () {
+            var loginDetails = [];
+            // var d = JSON.parse(localStorage.getItem('login'));
+            if (confirm("AutoFill Details")) {
+                // Rahul Maurya
+                // $("#uname").val(d[0].uname);
+                // $("#password").val(d[0].pw);
+
+                let user = JSON.parse(localStorage.getItem('user'));
+                $("#uname").val(user.uname);
+                $("#password").val(user.pw);
+            }
+
+            var i = 0;
+            setInterval(() => {
+                console.log(i);
+                $('body').css('background-image', `url(https://source.unsplash.com/random/?sig=${i})`); 
+                i++;
+            }, 2000);
+
+            $("#login").on("click", function () {
+                console.log("Click event performed");
+                var username = $("#uname").val();
+                var password = $("#password").val();
+
+                // Rahul Maurya
+                let user = JSON.parse(localStorage.getItem('user'));
+                // $("#uname").val(user.uname);
+                // $("#password").val(user.pw);
+
+                if (username === user.uname && password === user.pw) {
+                    $(location).attr("href", "index.html");
+                } else {
+                    $("#result").html("Please enter valid details").css({
+                        "font-size": "20px",
+                        color: "red",
+                    });
+                }
+
+                console.log("Click event performed");
+            });
+
+            $(".sign-up-button").on("click", function () {
+                $(location).attr('href', 'register.html');
+            });
+        });
+    </script>
+</body>
+<html>
+
+</html>
+
+</html>

@@ -1,0 +1,31 @@
+{
+    "data": [
+        {
+            "name":"ABC",
+            "age":"22",
+            "gender":"Female",
+            "email":"abc@abc.com",
+            "contact":"9874531123",
+            "uname":"abc12345",
+            "pw":"abc@12345"
+        },
+        {
+            "name":"DEF",
+            "age":"25",
+            "gender":"Male",
+            "email":"def@def.com",
+            "contact":"9874531123",
+            "uname":"def12345",
+            "pw":"def@12345"
+        },
+        {
+            "name":"GHI",
+            "age":"20",
+            "gender":"Female",
+            "email":"ghi@ghi.com",
+            "contact":"9874531123",
+            "uname":"ghi12345",
+            "pw":"ghi@12345"
+        }
+    ]
+}
