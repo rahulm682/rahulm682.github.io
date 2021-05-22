@@ -61,8 +61,11 @@
                 // $("#password").val(d[0].pw);
 
                 let user = JSON.parse(localStorage.getItem('user'));
-                $("#uname").val(user.uname);
-                $("#password").val(user.pw);
+                if(user) {
+                    $("#uname").val(user.uname);
+                    $("#password").val(user.pw);
+                }
+                
             }
 
             var i = 0;
@@ -79,16 +82,19 @@
 
                 // Rahul Maurya
                 let user = JSON.parse(localStorage.getItem('user'));
+                if(!user) alert("No Account Found, Please regieter Yourself First");
                 // $("#uname").val(user.uname);
                 // $("#password").val(user.pw);
 
-                if (username === user.uname && password === user.pw) {
+                else {
+                    if (username === user.uname && password === user.pw) {
                     $(location).attr("href", "index.html");
                 } else {
                     $("#result").html("Please enter valid details").css({
                         "font-size": "20px",
                         color: "red",
                     });
+                }
                 }
 
 //                 console.log("Click event performed");
