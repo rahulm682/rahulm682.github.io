@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="vaccine.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+
+    <title>Find Vaccine Slots</title>
+</head>
+
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <h2 class="navbar-brand mb-0 h1">Find Vaccine Slots</h2>
+        </div>
+    </nav>
+
+    <div class="container padding-10">
+        <div class="container my-3">
+            <span class="mx-3">State</span>
+            <select id="stateSelector" name="state">
+                <option value="--Select Your State---">Select State</option>
+            </select>
+    
+            <span class="mx-3">District</span>
+            <select id="districtSelector" name="district">
+                <option value="--Select Your District---">Select District</option>
+            </select>
+            
+            
+            <span class="mx-3">Date</span>
+            <input id="dateSelector" type="date" min="">
+            <button id="submit" class="btn btn-success mx-5">Get Details</button>
+        </div>
+            
+            <div id="result" class="d-flex flex-wrap"></div>
+
+        
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <script src="vaccine.js"></script>
+</body>
+
+</html>
