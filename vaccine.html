@@ -27,52 +27,58 @@
     <div class="container my-4">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a id="district" class="nav-link active" aria-current="page">Find by District</a>
+                <a id="district" class="nav-link active" aria-current="page">Find by District</a>
             </li>
             <li class="nav-item">
-              <a id="pincode" class="nav-link">Find by Pincode</a>
+                <a id="pincode" class="nav-link">Find by Pincode</a>
             </li>
-          </ul>
+        </ul>
     </div>
 
     <div id="getByDistrict" class="container my-5">
-        <div class="container my-3">
-            <span class="mx-3">State</span>
-            <select id="stateSelector" name="state">
-                <option value="--Select Your State---">Select State</option>
-            </select>
-    
-            <span class="mx-3">District</span>
-            <select id="districtSelector" name="district">
-                <option value="--Select Your District---">Select District</option>
-            </select>
-            
-            
+        <div class="container mx-4 my-4">
             <div>
-                <span class="mx-3 my-3">Date</span>
-            <input id="dateSelectorDistrict" class="mx-3 my-3" type="date" min="">
-            <button id="submitDistrict" class="btn btn-success mx-5">Get Details</button>
-        </div>
-        </div>
-            
-            <div id="resultDistrict" class="d-flex flex-wrap"></div>
+                <!-- <span class="mx-3">State</span> -->
+                <select id="stateSelector" class="my-2" name="state">
+                    <option value="--Select Your State---">Select State</option>
+                </select>
+            </div>
+            <div>
+                <!-- <span class="mx-3">District</span> -->
+                <select id="districtSelector" class="my-2" name="district">
+                    <option value="--Select Your District---">Select District</option>
+                </select>
+            </div>
 
-        
+            <div>
+                <!-- <span class="mx-3 my-3">Date</span> -->
+                <input id="dateSelectorDistrict" class="my-2" type="date" min="">
+                <button id="submitDistrict" class="btn btn-success mx-5 my-2">Get Details</button>
+            </div>
+        </div>
+
+        <div id="resultDistrict" class="d-flex flex-wrap"></div>
+
+
     </div>
 
     <div id="getByPincode" class="container my-5 hide">
         <div class="container mx-4 my-4">
             <p id="pinErr"></p>
-            <input type="number" name="pincode" id="pincodeInput" placeholder="Enter Your Pincode">
-            <span class="mx-2 my-3">Date</span>
-            <input id="dateSelectorPincode" class="mx-3 my-3" type="date">
-            <button id="submitPincode" class="btn btn-success mx-5">Get Details</button>
+            <input type="number" class="my-2" name="pincode" id="pincodeInput" placeholder="Enter Your Pincode">
+            <div>
+                <!-- <span class="mx-2 my-3">Date</span> -->
+            <input id="dateSelectorPincode" class="mx-3 my-2" type="date">
+            </div>
+            <button id="submitPincode" class="btn btn-success mx-5 my-2">Get Details</button>
         </div>
 
         <div id="resultPincode" class="d-flex flex-wrap"></div>
     </div>
 
-    <h1><div id="noData" class="container my-5 mx-4"></div></h1>
+    <h1>
+        <div id="noData" class="container my-5 mx-4"></div>
+    </h1>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
