@@ -6,8 +6,8 @@ let accordionNews  =document.getElementById('accordionNews');
 
 const xhr = new XMLHttpRequest();
 // xhr.open('GET', `https://newsapi.org/v1/articles?source=the-next-web&apiKey=0487dda1c6b747da9ebb4c7e44ca2e93`, true);
-xhr.open('GET', `https://newsapi.org/v2/top-headlines?country=in&apiKey=0487dda1c6b747da9ebb4c7e44ca2e93`, true);
-// xhr.open('GET', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}`, true);
+// xhr.open('GET', `https://newsapi.org/v2/top-headlines?country=in&apiKey=0487dda1c6b747da9ebb4c7e44ca2e93`, true);
+ xhr.open('GET', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}`, true);
 
 // What to do when response is ready
 xhr.onload = function () {
